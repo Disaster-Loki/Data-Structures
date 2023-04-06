@@ -1,5 +1,5 @@
 # Estrutura-de-Dados
-Prof Vtuva Eduardo
+Prof Vatuva Eduardo
 Projeto Contentor
 2º Par/Grupo
 Realizado por: 
