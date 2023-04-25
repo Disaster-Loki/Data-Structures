@@ -1,3 +1,6 @@
+/* 
+ * Realizado por: Sebastião de Carvalho & Rafael Marcos
+*/
 public class Listadupla<TIPO> {
     private No primeiro;
     private No ultimo;

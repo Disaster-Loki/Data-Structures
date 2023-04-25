@@ -1,3 +1,6 @@
+/* 
+ * Realizado por: Sebastião de Carvalho & Rafael Marcos
+*/
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {

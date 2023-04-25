@@ -1,3 +1,6 @@
+/* 
+ * Realizado por: Sebastião de Carvalho & Rafael Marcos
+*/
 public class No {
     private Caminhao caminhao;
     private No proximo;

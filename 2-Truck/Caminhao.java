@@ -1,3 +1,6 @@
+/* 
+ * Realizado por: Sebastião de Carvalho & Rafael Marcos
+*/
 class Caminhao {
     private String modelo;
     private int anoFabricacao;

@@ -1,3 +1,6 @@
+/* 
+ * Realizado por: Sebastião de Carvalho & Rafael Marcos
+*/
 class CaminhaoEspecial extends Caminhao {
 
     private String especial;
