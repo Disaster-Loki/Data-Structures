@@ -22,7 +22,7 @@ public class Main {
             Caminhao c2 = new Caminhao();
             c2.setModelo("FordF-150");
             c2.setAltura(10.4);
-            c2.setAnoFabricacao(2300);
+            c2.setAnoFabricacao(2020);
             c2.setLargura(3.5);
             c2.setTara(6000);
             c2.setComprimento(26.8);
@@ -109,11 +109,11 @@ public class Main {
                 case 3: 
                        if(list == null){
                         System.out.print("\nLista Vazia!!!\n");
-                       }
+                       }else{
                         System.out.print("\n Digite o modelo: ");
-
                         String model = scan.nextLine();
                         list.consultar(model);
+                    }
                        break;
                 case 4:
                        System.out.print("\n Digite o modelo: ");
