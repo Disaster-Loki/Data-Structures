@@ -90,5 +90,12 @@ public class Listadupla<TIPO> {
         tamanho--;
         System.out.print("\nCaminhão antigo removido!!\n");
     }
+    public void mostraLista(){
+        No Atual = primeiro;
+        while(Atual != null){
+            System.out.print(Atual.getCaminhao().toString());
+            Atual = Atual.getProximo();
+        }
+    }
 
 }

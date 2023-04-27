@@ -49,6 +49,7 @@ public class Main {
             System.out.println("\t\t\t|  4 - Remover caminhão                    |");
             System.out.println("\t\t\t|  5 - Remover caminhão antigo             |");
             System.out.println("\t\t\t|  6 - Quantidade de caminhões             |");
+            System.out.println("\t\t\t|  7 - Mostrar Lista                       |");
             System.out.println("\t\t\t|  0 -  Sair                               |");
             System.out.println("\t\t\t============================================\n");
             System.out.print("Escolha uma opção: ");
@@ -107,8 +108,9 @@ public class Main {
                        System.out.println("Caminhão Especial adicionado....\n");
                        break;
                 case 3: 
-                       if(list == null){
+                       if(list == null || list.tamanho() == 0){
                         System.out.print("\nLista Vazia!!!\n");
+                        break;
                        }else{
                         System.out.print("\n Digite o modelo: ");
                         String model = scan.nextLine();
@@ -116,18 +118,33 @@ public class Main {
                     }
                        break;
                 case 4:
+                       if(list == null || list.tamanho() == 0){
+                        System.out.print("\nLista Vazia!!!\n");
+                        break;
+                       }
                        System.out.print("\n Digite o modelo: ");
                        String mode = scan.nextLine();
                        list.remover(mode);
                        break;
                 case 5:
+                       System.out.print("Camiões com ano menor ou igual a 2000");
+                       if(list == null || list.tamanho() == 0){
+                        System.out.print("\nLista Vazia!!!\n");
+                        break;
+                       }
                        System.out.print("\n Digite o modelo: ");
                        String mol = scan.nextLine();
                        System.out.print("\n Digite o Ano: ");
                        int ano = scan.nextInt();
-                       list.removerAntigo(mol, ano);
+                       if(ano >= 1700 && ano <= 2000)
+                          list.removerAntigo(mol, ano);
+                        else System.out.print("Ano inválido...");
                       break;
                 case 6:
+                      if(list == null || list.tamanho() == 0){
+                        System.out.print("\nLista Vazia!!!\n");
+                        break;
+                       }
                       System.out.println("========================");
                       int size = list.tamanho();
                       if(size <= 1)
@@ -135,6 +152,13 @@ public class Main {
                       else
                         System.out.println("Tamanho: " + size + " Caminhões");
                       System.out.println("========================"); 
+                      break;
+                case 7:
+                      if(list == null || list.tamanho() == 0){
+                        System.out.print("\nLista Vazia!!!\n");
+                        break;
+                       }
+                      list.mostraLista();
                       break;
                 case 0: break;
                 default: System.out.println("\nESCOLHA INVALIDA");
