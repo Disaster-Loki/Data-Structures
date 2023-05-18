@@ -30,7 +30,6 @@ class PlayList {
         }
 
         tamanho++;
-        System.out.println("\nVídeo adicionado com sucesso...\n");
     }
 
     public void consultarVideo(String titulo) {

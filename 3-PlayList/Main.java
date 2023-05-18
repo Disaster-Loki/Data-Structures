@@ -1,11 +1,9 @@
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         PlayList playlist = new PlayList();
-        // List<Video> PLAYLIST = PlayListFile.carregarPlaylist();
 
         Video v1 = new Video();
         v1.setTitulo("A Morte");
@@ -18,8 +16,8 @@ public class Main {
         v2.setDuracao(90);
         v2.setUrl("videos/teste");
         playlist.adicionarVideo(v2);
-
-        while (true) {
+        boolean sair = false;
+        while (!sair) {
             System.out.println("\t\t\t================= MENU =================");
             System.out.println("\t\t\t|   1 - Adicionar Vídeo                |");
             System.out.println("\t\t\t|   2 - Consultar Vídeo                |");
@@ -46,6 +44,7 @@ public class Main {
                     System.out.print("\n================================\n");
                     Video video = new Video(titulo, url, duracao);
                     playlist.adicionarVideo(video);
+                    System.out.println("\nVídeo adicionado com sucesso...\n");
                     break;
                 case 2:
                     System.out.print("\n================================\n");
@@ -78,6 +77,7 @@ public class Main {
                     break;
                 case 0:
                     System.out.println("Encerrando o programa...");
+                    sair = true;
                     break;
                 default:
                     System.out.println("Opção inválida.");
