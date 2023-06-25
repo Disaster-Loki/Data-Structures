@@ -56,7 +56,6 @@ class PlayList {
             System.out.println("A lista de reprodução está vazia.\n");
             return;
         }
-
         No atual = primeiro;
 
         do {
