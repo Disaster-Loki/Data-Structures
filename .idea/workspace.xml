@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80d6f35e-b0fc-44f1-a68c-1dd35d563df2" name="Changes" comment="Project organization according to classes roles." />
+    <list default="true" id="80d6f35e-b0fc-44f1-a68c-1dd35d563df2" name="Changes" comment="Project organization according to classes roles.">
+      <change afterPath="$PROJECT_DIR$/4 -Tsukuyome/4 -Tsukuyome.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/DoubleLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/Graph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/ListNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="project-organization" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,23 +49,28 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "graphs__implementation",
     "jdk.selected.JAVA_MODULE": "20",
     "last_opened_file_path": "/home/orccyberpunk/eclipse-workspace/Estrutura de Dados/4 -Tsukuyome",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="20" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="ao.tsukuyomi.Main" />
-      <module name="Estrutura de Dados" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
