@@ -21,7 +21,7 @@ public class CircularList {
         }
     }
 
-    private void addPlayer(Player player) {
+    public void addPlayer(Player player) {
         if (size == players.length) {
             Player[] newArray = new Player[size * 2];                        // Se o tamanho atual for igual ao tamanho do array, duplica o tamanho
             System.arraycopy(players, 0, newArray, 0, size);  // Copia os elementos do array antigo para o novo array
@@ -135,7 +135,7 @@ public class CircularList {
         }
     }
 
-    private Player getPlayerByBattle(Battle battle) {
+    public Player getPlayerByBattle(Battle battle) {
         return null;
     }
 
@@ -155,7 +155,7 @@ public class CircularList {
         removeBattle(battle);
     }
 
-    private void removeBattle(Battle battle) {
+    public void removeBattle(Battle battle) {
         for (int i = 0; i < battles.length; i++) {
             if (battles[i] == battle) {
                 battles[i] = null;
