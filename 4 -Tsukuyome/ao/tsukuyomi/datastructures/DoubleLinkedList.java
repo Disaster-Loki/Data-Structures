@@ -70,4 +70,13 @@ public class DoubleLinkedList<T>{
     public void set(ListNode<T> e, int index){
         set(e.getContent(), index);
     }
+
+    @Override
+    public String toString(){
+        var sb = new StringBuilder();
+        for(int index = 0; index < size; index++)
+            sb.append("" + index + " - " + get(index) + "\n");
+
+        return sb.toString();
+    }
 }

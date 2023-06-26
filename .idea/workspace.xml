@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80d6f35e-b0fc-44f1-a68c-1dd35d563df2" name="Changes" comment="Project organization according to classes roles." />
+    <list default="true" id="80d6f35e-b0fc-44f1-a68c-1dd35d563df2" name="Changes" comment="Project organization according to classes roles.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/DoubleLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/DoubleLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/ListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/ListNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Estrutura de Dados/ao/tsukuyomi/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Estrutura de Dados/ao/tsukuyomi/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Estrutura de Dados/ao/tsukuyomi/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Estrutura de Dados/ao/tsukuyomi/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Estrutura de Dados/ao/tsukuyomi/datastructures/BinaryTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Estrutura de Dados/ao/tsukuyomi/datastructures/CircularList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Estrutura de Dados/ao/tsukuyomi/datastructures/Graphs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Estrutura de Dados/ao/tsukuyomi/datastructures/No.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Estrutura de Dados/ao/tsukuyomi/datastructures/Queue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Estrutura de Dados/ao/tsukuyomi/datastructures/Stack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Estrutura de Dados/ao/tsukuyomi/game/mechanics/Action.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Estrutura de Dados/ao/tsukuyomi/game/mechanics/Battle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Estrutura de Dados/ao/tsukuyomi/game/objects/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Estrutura de Dados/ao/tsukuyomi/game/objects/Skill.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,6 +76,20 @@
       <option name="ALTERNATIVE_JRE_PATH" value="20" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="ao.tsukuyomi.Main" />
+      <module name="4 -Tsukuyome" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="4 -Tsukuyome" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="4 -Tsukuyome" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

@@ -1,5 +1,7 @@
 package ao.tsukuyomi.datastructures;
 
+import java.util.Scanner;
+
 public class Graph<T> {
     T vertex;
     DoubleLinkedList<Graph<T>> edges;
@@ -28,5 +30,17 @@ public class Graph<T> {
 
     public Graph<T> getLink(int index) {
         return (edges.get(index)).getContent();
+    }
+
+    public void seeLinks(Graph<T> g){
+        Scanner s = new Scanner(System.in);
+        System.out.print("Selecione amigo (-1 para voltar): ");
+        int index = s.nextInt();
+
+        if(index < 0)
+            return;
+        seeLinks(g.getLink(index));
+
+        s.close();
     }
 }
