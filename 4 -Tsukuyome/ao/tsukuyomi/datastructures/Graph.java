@@ -20,6 +20,8 @@ public class Graph<T> {
     }
 
     public void link(Graph vertex) {
+        if(this.equals(vertex))
+            return;
         edges.add(vertex);
         vertex.link(this);
     }
@@ -34,6 +36,7 @@ public class Graph<T> {
 
     public void seeLinks(Graph<T> g){
         Scanner s = new Scanner(System.in);
+        System.out.println(this.edges);
         System.out.print("Selecione amigo (-1 para voltar): ");
         int index = s.nextInt();
 
