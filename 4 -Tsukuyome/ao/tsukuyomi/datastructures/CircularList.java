@@ -1,8 +1,14 @@
+package ao.tsukuyomi.datastructures;
+
+import ao.tsukuyomi.game.mechanics.Battle;
+import ao.tsukuyomi.game.objects.Player;
+import ao.tsukuyomi.game.objects.Skill;
+
 import java.util.Date;
 
-class CircularList {
-    private Player[] players;  // Array of Player
-    private Battle[] battles;  //Array of Battle
+public class CircularList {
+    private Player[] players;  // Array of ao.tsukuyomi.game.objects.Player
+    private Battle[] battles;  //Array of ao.tsukuyomi.game.mechanics.Battle
     private int size;          // size atual da lista
 
     public CircularList(Queue queue) {
@@ -32,17 +38,17 @@ class CircularList {
     public void ConnectionPlayer(String nickname, String skillName) {
         Player player = getPlayerByNickname(nickname);
         if (player == null) {
-            System.out.println("Player not found.");
+            System.out.println("ao.tsukuyomi.game.objects.Player not found.");
             return;
         }
         Skill skill = getSkillByName(skillName);
         if (skill == null) {
-            System.out.println("Skill not found.");
+            System.out.println("ao.tsukuyomi.game.objects.Skill not found.");
             return;
         }
 
         player.addSkill(skill);
-        System.out.println("Player connected to skill successfully.");
+        System.out.println("ao.tsukuyomi.game.objects.Player connected to skill successfully.");
     }
 
     public void StartBattle(String nickname1, String nickname2) {
@@ -80,7 +86,7 @@ class CircularList {
             }
         }
 
-        System.out.println("Battle ended.");
+        System.out.println("ao.tsukuyomi.game.mechanics.Battle ended.");
 
         battle.setSkill(player1.getSkill(turns - 1));
         battle.setSkill(player2.getSkill(turns - 1));
@@ -89,13 +95,13 @@ class CircularList {
     public void ReadBattle(String nickname) {
         Player player = getPlayerByNickname(nickname);
         if (player == null) {
-            System.out.println("Player not found.");
+            System.out.println("ao.tsukuyomi.game.objects.Player not found.");
             return;
         }
 
         Battle battle = getBattleByPlayer(player);
         if (battle == null) {
-            System.out.println("Battle not found for the player.");
+            System.out.println("ao.tsukuyomi.game.mechanics.Battle not found for the player.");
             return;
         }
 
@@ -105,7 +111,7 @@ class CircularList {
             return;
         }
 
-        System.out.println("Player: " + player.getNick());
+        System.out.println("ao.tsukuyomi.game.objects.Player: " + player.getNick());
         System.out.println("Opponent: " + opponent.getNick());
         System.out.println("Date and Time: " + battle.getDateTime());
         System.out.println("Turns: " + battle.getSkill().getLevel());
@@ -119,7 +125,7 @@ class CircularList {
                 Player opponent = getOpponent(player, battle);
 
                 System.out.println("=================================");
-                System.out.println("Player: " + player.getNick());
+                System.out.println("ao.tsukuyomi.game.objects.Player: " + player.getNick());
                 System.out.println("Opponent: " + opponent.getNick());
                 System.out.println("Date and Time: " + battle.getDateTime());
                 System.out.println("Turns: " + battle.getSkill().getLevel());
@@ -136,13 +142,13 @@ class CircularList {
     public void RemoveBattle(String nickname) {
         Player player = getPlayerByNickname(nickname);
         if (player == null) {
-            System.out.println("Player not found.");
+            System.out.println("ao.tsukuyomi.game.objects.Player not found.");
             return;
         }
 
         Battle battle = getBattleByPlayer(player);
         if (battle == null) {
-            System.out.println("Battle not found for the player.");
+            System.out.println("ao.tsukuyomi.game.mechanics.Battle not found for the player.");
             return;
         }
 

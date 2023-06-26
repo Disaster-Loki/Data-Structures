@@ -1,3 +1,5 @@
+package ao.tsukuyomi.datastructures;
+
 public class No {
     private int valor;           // Valor do nó
     private String skill;        // Habilidade associada ao nó

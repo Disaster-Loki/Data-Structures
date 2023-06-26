@@ -1,3 +1,7 @@
+package ao.tsukuyomi.game.mechanics;
+
+import ao.tsukuyomi.game.objects.Skill;
+
 import java.util.Date;
 
 public class Battle {

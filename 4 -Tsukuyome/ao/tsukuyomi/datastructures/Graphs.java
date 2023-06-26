@@ -1,3 +1,7 @@
+package ao.tsukuyomi.datastructures;
+
+import ao.tsukuyomi.game.objects.Player;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

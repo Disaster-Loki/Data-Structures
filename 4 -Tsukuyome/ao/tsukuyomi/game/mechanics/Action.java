@@ -1,9 +1,13 @@
+package ao.tsukuyomi.game.mechanics;
+
+import ao.tsukuyomi.game.objects.Player;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-class Action{
+public class Action{
     private Map<Player, String> actions;    // Mapa que associa cada jogador a uma ação
 
     public Action() {

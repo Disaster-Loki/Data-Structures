@@ -1,3 +1,5 @@
+package ao.tsukuyomi;
+
 import java.util.Scanner;
 
 public class Main {
@@ -5,7 +7,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Menu menu = new Menu();
 
-        System.out.println("\t\t\t Welcome to Tsukuyome Game!");
+        System.out.println("\t\t\t Welcome to Tsukuyome ao.tsukuyomi.Game!");
 
         while (true) {
             if (!menu.isLoggedIn()) {

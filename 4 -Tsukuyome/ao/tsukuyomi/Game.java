@@ -1,3 +1,9 @@
+package ao.tsukuyomi;
+
+import ao.tsukuyomi.datastructures.BinaryTree;
+import ao.tsukuyomi.game.objects.Player;
+import ao.tsukuyomi.game.objects.Skill;
+
 import java.util.List;
 
 public class Game{
