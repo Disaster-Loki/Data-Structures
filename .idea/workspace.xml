@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80d6f35e-b0fc-44f1-a68c-1dd35d563df2" name="Changes" comment="Project organization according to classes roles.">
-      <change afterPath="$PROJECT_DIR$/4 -Tsukuyome/4 -Tsukuyome.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/DoubleLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/Graph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/ListNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="80d6f35e-b0fc-44f1-a68c-1dd35d563df2" name="Changes" comment="Project organization according to classes roles." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +43,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "graphs__implementation",
+    "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "20",
     "last_opened_file_path": "/home/orccyberpunk/eclipse-workspace/Estrutura de Dados/4 -Tsukuyome",
     "project.structure.last.edited": "Modules",
@@ -100,11 +93,20 @@
       <option name="project" value="LOCAL" />
       <updated>1687805317866</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Graph implementation">
+      <option name="closed" value="true" />
+      <created>1687816510496</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687816510496</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project organization according to classes roles." />
-    <option name="LAST_COMMIT_MESSAGE" value="Project organization according to classes roles." />
+    <MESSAGE value="Graph implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Graph implementation" />
   </component>
 </project>
