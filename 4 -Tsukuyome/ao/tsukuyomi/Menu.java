@@ -1,9 +1,6 @@
 package ao.tsukuyomi;
 
-import ao.tsukuyomi.datastructures.BinaryTree;
-import ao.tsukuyomi.datastructures.CircularList;
-import ao.tsukuyomi.datastructures.Queue;
-import ao.tsukuyomi.datastructures.Stack;
+import ao.tsukuyomi.datastructures.*;
 import ao.tsukuyomi.game.mechanics.Action;
 import ao.tsukuyomi.game.objects.Player;
 import ao.tsukuyomi.game.objects.Skill;
@@ -18,6 +15,7 @@ public class Menu {
     private Stack stack;
     private CircularList circularList;
     private BinaryTree binaryTree;
+    private Graph<Player> graph;
 
     public Menu() {
         this.admin = new Admin("admin", "admin123");
@@ -27,6 +25,7 @@ public class Menu {
         this.stack = new Stack(queue);
         this.circularList = new CircularList(queue);
         this.binaryTree = new BinaryTree();
+        this.graph = new Graph<>(new Player());
         testPlayer();
         testSkills();
     }
@@ -424,7 +423,7 @@ public class Menu {
                        System.out.print("Invalid Option");
                        break;
             }
-        }while();
+        }while(option != 4);
     }
 
 
