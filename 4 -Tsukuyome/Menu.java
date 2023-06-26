@@ -260,48 +260,48 @@ public class Menu {
         int option;
         do{
             System.out.println("\n\t\t\t=========== CircularList Menu ===========");
-            System.out.println("\t\t\t|          0 - Connection Skill      |");
-            System.out.println("\t\t\t|          1 - Start Battle          |");
-            System.out.println("\t\t\t|          2 - Read Battle           |");
-            System.out.println("\t\t\t|          3 - Battle History        |");
-            System.out.println("\t\t\t|          4 - Remove Battle         |");
-            System.out.println("\t\t\t|          5 - Remove History        |");
-            System.out.println("\t\t\t|          6 - Go Back               |");
+            System.out.println("\t\t\t|          1 - Connection Skill      |");
+            System.out.println("\t\t\t|          2 - Start Battle          |");
+            System.out.println("\t\t\t|          3 - Read Battle           |");
+            System.out.println("\t\t\t|          4 - Battle History        |");
+            System.out.println("\t\t\t|          5 - Remove Battle         |");
+            System.out.println("\t\t\t|          6 - Remove History        |");
+            System.out.println("\t\t\t|          7 - Go Back               |");
             System.out.println("\t\t\t===========================================\n\n");
             System.out.print("Choose Option: ");
             option = Integer.parseInt(scan.nextLine());
             switch(option){
-                case 0: 
-                      System.out.println("Nick Player: ");
+                case 1: 
+                      System.out.print("Nick Player: ");
                       String nick_player = scan.nextLine();
-                      System.out.println("Name Skill: ");
+                      System.out.print("Name Skill: ");
                       String nameskill = scan.nextLine();
                       circularList.ConnectionPlayer(nick_player, nameskill);
                       break;
-                case 1:
-                      System.out.println("Nick Player 1: ");
+                case 2:
+                      System.out.print("Nick Player 1: ");
                       String nickplayer = scan.nextLine();
-                      System.out.println("Nick Palyer 2: ");
+                      System.out.print("Nick Palyer 2: ");
                       String nickplayer2 = scan.nextLine();
                       circularList.StartBattle(nickplayer, nickplayer2);
                       break;
-                case 2:
+                case 3:
                       System.out.println("Nick: ");
                       String nickname = scan.nextLine();
                       circularList.ReadBattle(nickname);
                       break;
-                case 3:
+                case 4:
                       circularList.BattleHistory();
                       break;
-                case 4:
+                case 5:
                       System.out.println("\n\tNickname: ");
                       String remove_nick = scan.nextLine(); 
                       circularList.RemoveBattle(remove_nick);
                       break;
-                case 5:
+                case 6:
                       circularList.RemoveHistory();
                       break;
-                case 6:
+                case 7:
                       return;
                 default:
                        System.out.print("Invalid Option!!\n");
@@ -325,37 +325,36 @@ public class Menu {
     public void showBinaryTreeMenu(Scanner scanner) {
         int option;
         do {
-            System.out.println("\n\t\t\t=========== Binary Tree Menu ===========");
+            System.out.println("\n\t\t\t=========== Binary Tree Menu ============");
             System.out.println("\t\t\t|       1 - Create Skill                |");
-            System.out.println("\t\t\t|       2 - Remove Skill                |");
-            System.out.println("\t\t\t|       3 - List Skills                 |");
-            System.out.println("\t\t\t|       4 - Show Full Tree              |");
+            System.out.println("\t\t\t|       2 - Search Skill                |");
+            System.out.println("\t\t\t|       3 - Show Full Tree              |");
+            System.out.println("\t\t\t|       4 - List Skills                 |");
             System.out.println("\t\t\t|       5 - Show Levels                 |");
-            System.out.println("\t\t\t|       6 - Search Skill                |");
+            System.out.println("\t\t\t|       6 - Remove Skill                |");
             System.out.println("\t\t\t|       7 - Remove All Skills           |");
             System.out.println("\t\t\t|       8 - Go Back                     |");
-            System.out.println("\t\t\t========================================\n\n");
+            System.out.println("\t\t\t=========================================\n\n");
             System.out.print("Choose Option: ");
             option = Integer.parseInt(scan.nextLine());
 
             switch (option) {
                 case 1:
                     System.out.print("Enter skill name: ");
-                    String name = scanner.nextLine();
+                    String name = scan.nextLine();
                     System.out.print("Enter skill description: ");
-                    String description = scanner.nextLine();
+                    String description = scan.nextLine();
                     System.out.print("Enter skill level: ");
-                    int level = scanner.nextInt();
-                    scanner.nextLine();
-
+                    int level = scan.nextInt();
+                    scan.nextLine();
                     Skill skill = new Skill(name, description, level);
                     binaryTree.createSkill(skill);
                     System.out.println("\nSkill created successfully.");
                     break;
                 case 2:
                     System.out.print("Enter the skill level to remove: ");
-                    int skillLevel = scanner.nextInt();
-                    scanner.nextLine();
+                    int skillLevel = scan.nextInt();
+                    scan.nextLine();
                     binaryTree.removerNode(skillLevel);
                     System.out.println("\nSkill removed successfully.");
                     break;
@@ -370,7 +369,7 @@ public class Menu {
                     break;
                 case 6:
                     System.out.print("Enter the skill name to search: ");
-                    String skillName = scanner.nextLine();
+                    String skillName = scan.nextLine();
                     binaryTree.searchSkill(skillName);
                     break;
                 case 7:

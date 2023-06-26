@@ -177,9 +177,9 @@ class CircularList {
     }
 
     private Player getPlayerByNickname(String nickname) {
-    for (int i = 0; i < size; i++) {
-        if (players[i] != null && players[i].getNick().equalsIgnoreCase(nickname)) {
-            return players[i];
+    for (Player player : players) {
+        if (player != null && player.getNick().equalsIgnoreCase(nickname)) {
+            return player;
         }
     }
     return null;
