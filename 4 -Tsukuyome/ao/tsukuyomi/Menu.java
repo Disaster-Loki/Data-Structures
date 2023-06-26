@@ -144,11 +144,11 @@ public class Menu {
                 String pass = scanner.nextLine();
                 Player newPlayer = new Player(name, age, gender, email, nick, pass);
                 queue.AddPlayer(newPlayer);
-                System.out.println("\nao.tsukuyomi.game.objects.Player added successfully.");
+                System.out.println("\nPlayer added successfully.");
                 break;
             case 2:
                 if (queue.ListPlayer().isEmpty()){
-                     System.out.println("ao.tsukuyomi.datastructures.No players in the queue.");
+                     System.out.println("No players in the queue.");
                 }else {
                      System.out.print("\n\tNick: ");
                      String consulta_nick = scan.nextLine();
@@ -157,7 +157,7 @@ public class Menu {
                 break;
             case 3:
                  if (queue.ListPlayer().isEmpty()){
-                     System.out.println("ao.tsukuyomi.datastructures.No players in the queue.");
+                     System.out.println("No players in the queue.");
                 }else {
                      System.out.print("\n\tNick: ");
                      String edit_nick = scan.nextLine();
@@ -169,7 +169,7 @@ public class Menu {
                  break;
             case 5:
                 if (queue.ListPlayer().isEmpty()){
-                     System.out.println("ao.tsukuyomi.datastructures.No players in the queue.");
+                     System.out.println("No players in the queue.");
                 }else {
                      System.out.print("\n\tNick: ");
                      String remove_nick = scan.nextLine();
@@ -191,11 +191,11 @@ public class Menu {
     public void showStackMenu(Scanner scanner) {
     int option;
     do {
-        System.out.println("\n\t\t\t=========== ao.tsukuyomi.datastructures.Stack ao.tsukuyomi.Menu ===========");
-        System.out.println("\t\t\t|       1 - Connect ao.tsukuyomi.game.mechanics.Action       |");
-        System.out.println("\t\t\t|       2 - Read ao.tsukuyomi.game.mechanics.Action          |");
-        System.out.println("\t\t\t|       3 - ao.tsukuyomi.game.mechanics.Action History       |");
-        System.out.println("\t\t\t|       4 - Remove ao.tsukuyomi.game.mechanics.Action        |");
+        System.out.println("\n\t\t\t=========== Stack Menu ===========");
+        System.out.println("\t\t\t|       1 - Connect Action       |");
+        System.out.println("\t\t\t|       2 - Read Action          |");
+        System.out.println("\t\t\t|       3 - Action History       |");
+        System.out.println("\t\t\t|       4 - Remove Action        |");
         System.out.println("\t\t\t|       5 - Delete All Actions   |");
         System.out.println("\t\t\t|       6 - Go Back              |");
         System.out.println("\t\t\t==================================\n\n");
@@ -206,7 +206,7 @@ public class Menu {
             case 1:
                 Action action = new Action();
                 if (queue.ListPlayer().isEmpty()) {
-                    System.out.println("ao.tsukuyomi.datastructures.No players in the queue.");
+                    System.out.println("No players in the queue.");
                 } else {
                     System.out.print("\nNick of the player: ");
                     String playerNick = scan.nextLine();
@@ -216,15 +216,15 @@ public class Menu {
                         String playerAction = scan.nextLine();
                         action.AddAction(player, playerAction);
                         stack.addAction(action);
-                        System.out.println("ao.tsukuyomi.game.mechanics.Action connected successfully!");
+                        System.out.println("Action connected successfully!");
                     } else {
-                        System.out.println("ao.tsukuyomi.game.objects.Player not found in the queue.");
+                        System.out.println("Player not found in the queue.");
                     }
                 }
                 break;
             case 2:
                 if (stack.getActions().isEmpty()) {
-                    System.out.println("ao.tsukuyomi.datastructures.No actions in the stack.");
+                    System.out.println("No actions in the stack.");
                 } else {
                     System.out.print("\nNick: ");
                     String nick = scan.nextLine();
@@ -233,14 +233,14 @@ public class Menu {
                 break;
             case 3:
                 if (stack.getActions().isEmpty()) {
-                    System.out.println("ao.tsukuyomi.datastructures.No actions in the stack.");
+                    System.out.println("No actions in the stack.");
                 } else {
                     stack.ActionHistory();
                 }
                 break;
             case 4:
                 if (stack.getActions().isEmpty()) {
-                    System.out.println("ao.tsukuyomi.datastructures.No actions in the stack.");
+                    System.out.println("No actions in the stack.");
                 } else {
                     System.out.print("\nNick: ");
                     String nickname = scan.nextLine();
@@ -249,7 +249,7 @@ public class Menu {
                 break;
             case 5:
                 if (stack.getActions().isEmpty()) {
-                    System.out.println("ao.tsukuyomi.datastructures.No actions in the stack.");
+                    System.out.println("No actions in the stack.");
                 } else {
                     stack.removeAllActions();
                     System.out.println("All actions removed.");
@@ -268,12 +268,12 @@ public class Menu {
     public void showCircularListMenu(Scanner scanner) {
         int option;
         do{
-            System.out.println("\n\t\t\t========== ao.tsukuyomi.datastructures.CircularList ao.tsukuyomi.Menu ==========");
-            System.out.println("\t\t\t|          1 - Connection ao.tsukuyomi.game.objects.Skill      |");
-            System.out.println("\t\t\t|          2 - Start ao.tsukuyomi.game.mechanics.Battle          |");
-            System.out.println("\t\t\t|          3 - Read ao.tsukuyomi.game.mechanics.Battle           |");
-            System.out.println("\t\t\t|          4 - ao.tsukuyomi.game.mechanics.Battle History        |");
-            System.out.println("\t\t\t|          5 - Remove ao.tsukuyomi.game.mechanics.Battle         |");
+            System.out.println("\n\t\t\t========== CircularList Menu ==========");
+            System.out.println("\t\t\t|          1 - Connection Skill      |");
+            System.out.println("\t\t\t|          2 - Start Battle          |");
+            System.out.println("\t\t\t|          3 - Read Battle           |");
+            System.out.println("\t\t\t|          4 - Battle History        |");
+            System.out.println("\t\t\t|          5 - Remove Battle         |");
             System.out.println("\t\t\t|          6 - Remove History        |");
             System.out.println("\t\t\t|          7 - Go Back               |");
             System.out.println("\t\t\t=========================================\n\n");
@@ -282,17 +282,17 @@ public class Menu {
             switch(option){
                 case 1: 
                       if(queue.ListPlayer().isEmpty()){
-                        System.out.println("ao.tsukuyomi.datastructures.No players int the queue");
+                        System.out.println("No players int the queue");
                       }else{
-                        System.out.print("Nick ao.tsukuyomi.game.objects.Player: ");
+                        System.out.print("Nick Player: ");
                         String nick_player = scan.nextLine();
-                        System.out.print("Name ao.tsukuyomi.game.objects.Skill: ");
+                        System.out.print("Name Skill: ");
                         String nameskill = scan.nextLine();
                         circularList.ConnectionPlayer(nick_player, nameskill);
                       }
                       break;
                 case 2:
-                      System.out.print("Nick ao.tsukuyomi.game.objects.Player 1: ");
+                      System.out.print("Nick Player 1: ");
                       String nickplayer = scan.nextLine();
                       System.out.print("Nick Palyer 2: ");
                       String nickplayer2 = scan.nextLine();
@@ -338,13 +338,13 @@ public class Menu {
     public void showBinaryTreeMenu(Scanner scanner) {
         int option;
         do {
-            System.out.println("\n\t\t\t=========== Binary Tree ao.tsukuyomi.Menu ============");
-            System.out.println("\t\t\t|       1 - Create ao.tsukuyomi.game.objects.Skill                |");
-            System.out.println("\t\t\t|       2 - Search ao.tsukuyomi.game.objects.Skill                |");
+            System.out.println("\n\t\t\t=========== BinaryTree Menu ============");
+            System.out.println("\t\t\t|       1 - Create Skill                |");
+            System.out.println("\t\t\t|       2 - Search Skill                |");
             System.out.println("\t\t\t|       3 - Show Full Tree              |");
             System.out.println("\t\t\t|       4 - List Skills                 |");
             System.out.println("\t\t\t|       5 - Show Levels                 |");
-            System.out.println("\t\t\t|       6 - Remove ao.tsukuyomi.game.objects.Skill                |");
+            System.out.println("\t\t\t|       6 - Remove Skill                |");
             System.out.println("\t\t\t|       7 - Remove All Skills           |");
             System.out.println("\t\t\t|       8 - Go Back                     |");
             System.out.println("\t\t\t=========================================\n\n");
@@ -362,14 +362,14 @@ public class Menu {
                     scan.nextLine();
                     Skill skill = new Skill(name, description, level);
                     binaryTree.createSkill(skill);
-                    System.out.println("\nao.tsukuyomi.game.objects.Skill created successfully.");
+                    System.out.println("\nSkill created successfully.");
                     break;
                 case 2:
                     System.out.print("Enter the skill level to remove: ");
                     int skillLevel = scan.nextInt();
                     scan.nextLine();
                     binaryTree.removerNode(skillLevel);
-                    System.out.println("\nao.tsukuyomi.game.objects.Skill removed successfully.");
+                    System.out.println("\nSkill removed successfully.");
                     break;
                 case 3:
                     binaryTree.showSkill();
