@@ -49,12 +49,12 @@ public class Menu {
 
     public void showMenuMain() {
         while (true) {
-            System.out.println("\t\t\t=========== ao.tsukuyomi.Main ao.tsukuyomi.Menu ===========");
-            System.out.println("\t\t\t|        1 - ao.tsukuyomi.datastructures.Queue             |");
-            System.out.println("\t\t\t|        2 - ao.tsukuyomi.datastructures.Stack             |");
+            System.out.println("\t\t\t=========== Main Menu ===========");
+            System.out.println("\t\t\t|        1 - Queue             |");
+            System.out.println("\t\t\t|        2 - Stack             |");
             System.out.println("\t\t\t|        3 - Circular List     |");
             System.out.println("\t\t\t|        4 - Binary Tree       |");
-            System.out.println("\t\t\t|        5 - ao.tsukuyomi.datastructures.Graphs            |");
+            System.out.println("\t\t\t|        5 - Graphs            |");
             System.out.println("\t\t\t|        6 - Logout            |");
             System.out.println("\t\t\t================================\n\n");
             System.out.print("Choose Option: ");
@@ -116,12 +116,12 @@ public class Menu {
     public void showQueueMenu(Scanner scanner) {
         int option;
         do{
-        System.out.println("\n\t\t\t=========== ao.tsukuyomi.datastructures.Queue ao.tsukuyomi.Menu ===========");
-        System.out.println("\t\t\t|       1 - Create ao.tsukuyomi.game.objects.Player        |");
-        System.out.println("\t\t\t|       2 - Read ao.tsukuyomi.game.objects.Player          |");
-        System.out.println("\t\t\t|       3 - Edit ao.tsukuyomi.game.objects.Player          |");
-        System.out.println("\t\t\t|       4 - List ao.tsukuyomi.game.objects.Player          |");
-        System.out.println("\t\t\t|       5 - Remove ao.tsukuyomi.game.objects.Player        |");
+        System.out.println("\n\t\t\t=========== Queue Menu ===========");
+        System.out.println("\t\t\t|       1 - Create Player        |");
+        System.out.println("\t\t\t|       2 - Read Player          |");
+        System.out.println("\t\t\t|       3 - Edit Player          |");
+        System.out.println("\t\t\t|       4 - List Player          |");
+        System.out.println("\t\t\t|       5 - Remove Player        |");
         System.out.println("\t\t\t|       6 - Remove All Players   |");
         System.out.println("\t\t\t|       7 - Go Back              |");
         System.out.println("\t\t\t==================================\n\n");
@@ -400,7 +400,31 @@ public class Menu {
     }
 
     public void showGraphsMenu(Scanner scanner) {
-        // Implement the graphs menu
+        int option;
+        do {
+            System.out.println("\t\t\t=========== Graphs Menu ===========");
+            System.out.println("\t\t\t|        1 - Add Friends        |");
+            System.out.println("\t\t\t|        2 - See Friends Of     |");
+            System.out.println("\t\t\t|        3 - Remove Friend      |");
+            System.out.println("\t\t\t|        4 - Go Back            |");
+            System.out.println("\t\t\t================================\n");
+            System.out.print("Choose Option: ");
+            option = Integer.parseInt(scan.nextLine());
+
+            switch (option){
+                case 1:
+                       break;
+                case 2:
+                       break;
+                case 3:
+                       break;
+                case 4:
+                       return;
+                default:
+                       System.out.print("Invalid Option");
+                       break;
+            }
+        }while();
     }
 
 
