@@ -12,6 +12,6 @@
 
 ## 2º Par/Grupo
 
-[Sebastião de Carvalho] (https://github.com/Disaster-Loki)  
-[Rafael Marcos] (https://github.com/Tesla-J)
+[Sebastião de Carvalho](https://github.com/Disaster-Loki)  
+[Rafael Marcos](https://github.com/Tesla-J)
 
