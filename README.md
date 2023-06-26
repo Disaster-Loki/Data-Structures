@@ -8,7 +8,7 @@
 
 3 Projeto PlayList (Lista Circular Duplamente Ligada)
 
-4 Projeto Tsukugome Game(Fila, Pilha, Lista Circular, Árvore Binária e Grafos)
+4 Projeto Tsukugome ao.tsukuyomi.Game(Fila, Pilha, Lista Circular, Árvore Binária e Grafos)
 
 ## 2º Par/Grupo
 

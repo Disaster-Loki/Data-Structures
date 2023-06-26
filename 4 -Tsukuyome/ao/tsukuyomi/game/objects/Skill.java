@@ -1,3 +1,5 @@
+package ao.tsukuyomi.game.objects;
+
 import java.io.Serializable;
 
 public class Skill implements Serializable {

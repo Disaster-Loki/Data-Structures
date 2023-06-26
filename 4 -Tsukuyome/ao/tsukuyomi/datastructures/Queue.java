@@ -1,3 +1,7 @@
+package ao.tsukuyomi.datastructures;
+
+import ao.tsukuyomi.game.objects.Player;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -43,11 +47,11 @@ public class Queue implements Serializable {
                 player.setNick(scan.nextLine());
                 System.out.print("Enter player password: ");
                 player.setSenha(scan.nextLine());
-                System.out.println("\nPlayer edited successfully.");
+                System.out.println("\nao.tsukuyomi.game.objects.Player edited successfully.");
                 return;
             }
         }
-        System.out.println("Player not found.");
+        System.out.println("ao.tsukuyomi.game.objects.Player not found.");
     }
 
     public List<Player> ListPlayer() {
@@ -56,9 +60,9 @@ public class Queue implements Serializable {
     
     public void PrintAllPlayers() {
         if (players.isEmpty()) {
-            System.out.println("No players in the queue.");
+            System.out.println("ao.tsukuyomi.datastructures.No players in the queue.");
         } else {
-            System.out.println("Player List:");
+            System.out.println("ao.tsukuyomi.game.objects.Player List:");
             for (Player player : players) {
                 System.out.println(player.toString());   // Imprime a lista de todos os jogadores
             }
@@ -80,16 +84,16 @@ public class Queue implements Serializable {
             Player player = iterator.next();
             if (player.getNick().equalsIgnoreCase(nick)) {
                 iterator.remove();
-                System.out.println("\nPlayer removed successfully.");   // Remove um jogador da lista com base no apelido fornecido
+                System.out.println("\nao.tsukuyomi.game.objects.Player removed successfully.");   // Remove um jogador da lista com base no apelido fornecido
                 return;
             }
         }
-        System.out.println("Player not found.");
+        System.out.println("ao.tsukuyomi.game.objects.Player not found.");
     }
 
     public void RemoverAllPlayer() {
         if (players.isEmpty()) {
-            System.out.println("No players in the queue.");
+            System.out.println("ao.tsukuyomi.datastructures.No players in the queue.");
         } else {
             players.clear();
             System.out.println("\nAll players removed successfully.");   // Remove todos os jogadores da lista
