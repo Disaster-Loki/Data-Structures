@@ -25,7 +25,6 @@ class CircularList {
             System.arraycopy(battles, 0, newBattles, 0, size);
             battles = newBattles;
         }
-
         players[size] = player;                                               // Adiciona o jogador na próxima posição disponível
         size++;
     }
@@ -36,7 +35,6 @@ class CircularList {
             System.out.println("Player not found.");
             return;
         }
-
         Skill skill = getSkillByName(skillName);
         if (skill == null) {
             System.out.println("Skill not found.");
@@ -120,12 +118,13 @@ class CircularList {
                 Player player = getPlayerByBattle(battle);
                 Player opponent = getOpponent(player, battle);
 
+                System.out.println("=================================");
                 System.out.println("Player: " + player.getNick());
                 System.out.println("Opponent: " + opponent.getNick());
                 System.out.println("Date and Time: " + battle.getDateTime());
                 System.out.println("Turns: " + battle.getSkill().getLevel());
                 System.out.println("Result: " + getResult(player, opponent, battle));
-                System.out.println();
+                System.out.println("==================================\n");
             }
         }
     }
@@ -165,7 +164,7 @@ class CircularList {
         }
     }
 
-    private Player getOpponent(Player player, Battle battle) {
+    public Player getOpponent(Player player, Battle battle) {
         int index = getIndex(player, battle);
         int opponentIndex = (index + 1) % size;
 
@@ -176,16 +175,17 @@ class CircularList {
         return players[opponentIndex];
     }
 
-    private Player getPlayerByNickname(String nickname) {
-    for (Player player : players) {
+    public Player getPlayerByNickname(String nickname) {
+    for (int i = 0; i < size; i++) {
+        Player player = players[i];
         if (player != null && player.getNick().equalsIgnoreCase(nickname)) {
-            return player;
+            return players[i];
         }
     }
     return null;
 }
 
-    private int getIndex(Player player, Battle battle) {
+    public int getIndex(Player player, Battle battle) {
         for (int i = 0; i < size; i++) {
             if (players[i] == player && battles[i] == battle) {
                 return i;
@@ -203,7 +203,7 @@ class CircularList {
         return null;
     }
 
-    private String getResult(Player player, Player opponent, Battle battle) {
+    public String getResult(Player player, Player opponent, Battle battle) {
         int level1 = player.getSkillLevel(battle.getSkill().getLevel() - 1);
         int level2 = opponent.getSkillLevel(battle.getSkill().getLevel() - 1);
 

@@ -259,7 +259,7 @@ public class Menu {
     public void showCircularListMenu(Scanner scanner) {
         int option;
         do{
-            System.out.println("\n\t\t\t=========== CircularList Menu ===========");
+            System.out.println("\n\t\t\t========== CircularList Menu ==========");
             System.out.println("\t\t\t|          1 - Connection Skill      |");
             System.out.println("\t\t\t|          2 - Start Battle          |");
             System.out.println("\t\t\t|          3 - Read Battle           |");
@@ -267,16 +267,20 @@ public class Menu {
             System.out.println("\t\t\t|          5 - Remove Battle         |");
             System.out.println("\t\t\t|          6 - Remove History        |");
             System.out.println("\t\t\t|          7 - Go Back               |");
-            System.out.println("\t\t\t===========================================\n\n");
+            System.out.println("\t\t\t=========================================\n\n");
             System.out.print("Choose Option: ");
             option = Integer.parseInt(scan.nextLine());
             switch(option){
                 case 1: 
-                      System.out.print("Nick Player: ");
-                      String nick_player = scan.nextLine();
-                      System.out.print("Name Skill: ");
-                      String nameskill = scan.nextLine();
-                      circularList.ConnectionPlayer(nick_player, nameskill);
+                      if(queue.ListPlayer().isEmpty()){
+                        System.out.println("No players int the queue");
+                      }else{
+                        System.out.print("Nick Player: ");
+                        String nick_player = scan.nextLine();
+                        System.out.print("Name Skill: ");
+                        String nameskill = scan.nextLine();
+                        circularList.ConnectionPlayer(nick_player, nameskill);
+                      }
                       break;
                 case 2:
                       System.out.print("Nick Player 1: ");
