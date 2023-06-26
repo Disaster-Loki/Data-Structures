@@ -29,4 +29,3 @@ public class Graph<T>{
     public Graph<T> getLink(int index){
         return (edges.get(index)).getContent();
     }
-}
