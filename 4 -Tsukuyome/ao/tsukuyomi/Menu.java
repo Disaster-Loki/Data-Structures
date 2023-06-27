@@ -4,6 +4,7 @@ import ao.tsukuyomi.datastructures.*;
 import ao.tsukuyomi.game.mechanics.Action;
 import ao.tsukuyomi.game.objects.Player;
 import ao.tsukuyomi.game.objects.Skill;
+import ao.tsukuyomi.game.objects.Event;
 
 import java.util.Scanner;
 
@@ -23,11 +24,12 @@ public class Menu {
         this.scan = new Scanner(System.in);
         this.queue = new Queue();
         this.stack = new Stack(queue);
-        this.circularList = new CircularList(queue);
+        this.circularList = new CircularList();
         this.binaryTree = new BinaryTree();
         this.graph = new Graph<>(new Player());
         testPlayer();
         testSkills();
+        testEvent();
     }
 
     public boolean login(String username, String password) {
@@ -265,63 +267,80 @@ public class Menu {
     } while (option != 6);
 }
 
-    public void showCircularListMenu(Scanner scanner) {
-        int option;
-        do{
-            System.out.println("\n\t\t\t========== CircularList Menu ==========");
-            System.out.println("\t\t\t|          1 - Connection Skill      |");
-            System.out.println("\t\t\t|          2 - Start Battle          |");
-            System.out.println("\t\t\t|          3 - Read Battle           |");
-            System.out.println("\t\t\t|          4 - Battle History        |");
-            System.out.println("\t\t\t|          5 - Remove Battle         |");
-            System.out.println("\t\t\t|          6 - Remove History        |");
-            System.out.println("\t\t\t|          7 - Go Back               |");
-            System.out.println("\t\t\t=========================================\n\n");
-            System.out.print("Choose Option: ");
-            option = Integer.parseInt(scan.nextLine());
-            switch(option){
-                case 1: 
-                      if(queue.ListPlayer().isEmpty()){
-                        System.out.println("No players int the queue");
-                      }else{
-                        System.out.print("Nick Player: ");
-                        String nick_player = scan.nextLine();
-                        System.out.print("Name Skill: ");
-                        String nameskill = scan.nextLine();
-                        circularList.ConnectionPlayer(nick_player, nameskill);
-                      }
-                      break;
-                case 2:
-                      System.out.print("Nick Player 1: ");
-                      String nickplayer = scan.nextLine();
-                      System.out.print("Nick Palyer 2: ");
-                      String nickplayer2 = scan.nextLine();
-                      circularList.StartBattle(nickplayer, nickplayer2);
-                      break;
-                case 3:
-                      System.out.println("Nick: ");
-                      String nickname = scan.nextLine();
-                      circularList.ReadBattle(nickname);
-                      break;
-                case 4:
-                      circularList.BattleHistory();
-                      break;
-                case 5:
-                      System.out.println("\n\tNickname: ");
-                      String remove_nick = scan.nextLine(); 
-                      circularList.RemoveBattle(remove_nick);
-                      break;
-                case 6:
-                      circularList.RemoveHistory();
-                      break;
-                case 7:
-                      return;
-                default:
-                       System.out.print("Invalid Option!!\n");
-                       break;
-            }
+    public void testEvent(){
+        Event e1 = new Event();
+        e1.setName("Lagoa Dorada");
+        e1.setDescription("Desafio ");
+        e1.setLocation("Samba");
+        circularList.adicionarEvent(e1);
 
-        }while(option != 6);
+        Event e2 = new Event();
+        e2.setName("Climb Tower");
+        e2.setDescription("Subir a torre ");
+        e2.setLocation("Luanda");
+        circularList.adicionarEvent(e2);
+    }
+    public void showCircularListMenu(Scanner scanner) {
+        boolean sair = false;
+        while (!sair) {
+            System.out.println("\t\t\t===== CircularList MENU =======");
+            System.out.println("\t\t\t|   1 - Add Event           |");
+            System.out.println("\t\t\t|   2 - Consult Event       |");
+            System.out.println("\t\t\t|   3 - Edit Event          |");
+            System.out.println("\t\t\t|   4 - Remove Event        |");
+            System.out.println("\t\t\t|   5 - List Event          |");
+            System.out.println("\t\t\t|   0 - Go Back             |");
+            System.out.println("\t\t\t===============================");
+            int opcao = 0;
+            System.out.print("\nChoose: ");
+            opcao = scan.nextInt();
+            scan.nextLine();
+
+            switch (opcao) {
+                case 1:
+                    System.out.print("\n================================\n");
+                    System.out.print("Id:: ");
+                    int id = scan.nextInt();
+                    scan.nextLine();
+                    System.out.print("Name: ");
+                    String name = scan.nextLine();
+                    System.out.print("Description: ");
+                    String description = scan.nextLine();
+                    System.out.print("Location: ");
+                    String location = scan.nextLine();
+                    System.out.print("================================\n");
+                    Event event = new Event(id, name, description, location);
+                    circularList.adicionarEvent(event);
+                    System.out.println("\nEvent adicionado com sucesso...\n");
+                    break;
+                case 2:
+                    System.out.print("\n================================\n");
+                    System.out.print("Name: ");
+                    String _name = scan.nextLine();
+                    circularList.consultarEvent(_name);
+                    break;
+                case 3:
+                    System.out.print("Digite o name do event a ser editado: ");
+                    String edit_name = scan.nextLine();
+                    circularList.editarEvent(edit_name);
+                    break;
+                case 4:
+                    System.out.print("Name: ");
+                    String rev_name = scan.nextLine();
+                    System.out.print("\n================================\n");
+                    circularList.removerEvent(rev_name);
+                    break;
+                case 5:
+                    circularList.mostrarLista();
+                    break;
+                case 0:
+                    sair = true;
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+                    break;
+            }
+        }
     }
 
     public void testSkills() {

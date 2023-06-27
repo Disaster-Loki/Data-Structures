@@ -92,13 +92,13 @@ public class BinaryTree {
     private void listarNodesRecursivo(No currentNode) {
         if (currentNode != null) {
             listarNodesRecursivo(currentNode.getEsquerda());
-            System.out.println("Level: " + currentNode.getValor() + " - ao.tsukuyomi.game.objects.Skill: " + currentNode.getSkill());
+            System.out.println("Level: " + currentNode.getValor() + " - Skill: " + currentNode.getSkill());
             listarNodesRecursivo(currentNode.getDireita());
         }
     }
 
     public void showFullTree() {
-        System.out.println("ao.tsukuyomi.game.objects.Skill Tree:");
+        System.out.println("Skill Tree:");
         showFullTreeRecursivo(raiz, 0);
     }
 
@@ -108,13 +108,13 @@ public class BinaryTree {
             for (int i = 0; i < nivel; i++) {
                 System.out.print("\t");
             }
-            System.out.println("Level: " + currentNode.getValor() + "-  ao.tsukuyomi.game.objects.Skill: " + currentNode.getSkill());
+            System.out.println("Level: " + currentNode.getValor() + "- Skill: " + currentNode.getSkill());
             showFullTreeRecursivo(currentNode.getEsquerda(), nivel + 1);
         }
     }
 
     public void showLevels() {
-        System.out.println("ao.tsukuyomi.game.objects.Skill Levels:");
+        System.out.println("Skill Levels:");
         showLevelsRecursivo(raiz, 0);
     }
 
@@ -143,7 +143,7 @@ public class BinaryTree {
             if (skill.getName().equalsIgnoreCase(nome)) {
                 encontrada = true;
                 System.out.println("\n================================");
-                System.out.println("ao.tsukuyomi.game.objects.Skill Name: " + skill.getName());
+                System.out.println("Skill Name: " + skill.getName());
                 System.out.println("Description: " + skill.getDescription());
                 System.out.println("Level: " + skill.getLevel());
                 System.out.println("================================");
@@ -151,7 +151,7 @@ public class BinaryTree {
             }
         }
         if (!encontrada) {
-            System.out.println("ao.tsukuyomi.game.objects.Skill not found.");
+            System.out.println("Skill not found.");
         }
     }
 
