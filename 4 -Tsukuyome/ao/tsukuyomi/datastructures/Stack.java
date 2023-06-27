@@ -32,28 +32,28 @@ public class Stack implements Serializable {
         for (Action action : actions) {
             Player player = action.getPlayer();
             if (player.getNick().equalsIgnoreCase(nickname)) {
-                System.out.println("ao.tsukuyomi.game.mechanics.Action: " + action.getAction(player));   // Lê a ação associada a um jogador específico
+                System.out.println("Action: " + action.getAction(player));   // Lê a ação associada a um jogador específico
                 actionFound = true;
                 break;
             }
         }
         if (!actionFound) {
-            System.out.println("ao.tsukuyomi.game.mechanics.Action not found for player: " + nickname);
+            System.out.println("Action not found for player: " + nickname);
         }
     }
 
     public void ActionHistory() {
         if (actions.isEmpty()) {
-            System.out.println("ao.tsukuyomi.datastructures.No actions in the stack.");
+            System.out.println("No actions in the stack.");
             return;
         }
 
-        System.out.println("ao.tsukuyomi.game.mechanics.Action History:");
+        System.out.println("Action History:");
         for (Action action : actions) {
             Player player = action.getPlayer();
             System.out.println("==========================");
             System.out.println("Nickname: " + player.getNick());
-            System.out.println("ao.tsukuyomi.game.mechanics.Action: " + action.getAction(player));
+            System.out.println("Action: " + action.getAction(player));
             System.out.println("==========================");
         }
     }
@@ -66,7 +66,7 @@ public class Stack implements Serializable {
             if (player.getNick().equalsIgnoreCase(nickname)) {
                 iterator.remove();
                 size--;
-                System.out.println("ao.tsukuyomi.game.mechanics.Action removed for player: " + nickname);   // Remove uma ação associada a um jogador específico
+                System.out.println("Action removed for player: " + nickname);   // Remove uma ação associada a um jogador específico
                 break;
             }
         }
@@ -78,12 +78,12 @@ public class Stack implements Serializable {
             Player player = topAction.getPlayer();
             if (player.getNick().equalsIgnoreCase(nickname)) {
                 actions.removeFirst();
-                System.out.println("ao.tsukuyomi.game.mechanics.Action removed for player: " + nickname);   // Remove a ação do topo da pilha associada a um jogador específico
+                System.out.println("Action removed for player: " + nickname);   // Remove a ação do topo da pilha associada a um jogador específico
             } else {
                 System.out.println("The top action does not belong to player: " + nickname);
             }
         } else {
-            System.out.println("ao.tsukuyomi.datastructures.No actions in the stack.");
+            System.out.println("No actions in the stack.");
         }
     }
     
