@@ -21,6 +21,27 @@ public class DoubleLinkedList<T>{
         return tmp;
     }
 
+    public ListNode<T> get(ListNode<T> e){
+        int index = 0;
+        ListNode<T> tmp;
+        for (; index < size; index++){
+            tmp = get(index);
+            if(tmp.equals(e))
+                return tmp;
+        }
+        return null;
+    }
+
+    public T get(T e){
+        int index = 0;
+        ListNode<T> tmp;
+        for (; index < size; index++){
+            tmp = get(index);
+            if(tmp.getContent().equals(e))
+                return tmp.getContent();
+        }
+        return null;
+    }
 
     public void add(ListNode<T> e, int index){
         if(index >= size || index < 0)
@@ -60,6 +81,24 @@ public class DoubleLinkedList<T>{
         tmp.setPrev(null);
 
         size--;
+    }
+
+    public void remove(ListNode<T> e){
+        int index = 0;
+        for (; index < size; index++)
+            if(get(index).equals(e))
+                break;
+        if(index < size)
+            remove(index);
+    }
+
+    public void remove(T e){
+        int index = 0;
+        for (; index < size; index++)
+            if(get(index).getContent().equals(e))
+                break;
+        if(index < size)
+            remove(index);
     }
 
     public void set(T e, int index){

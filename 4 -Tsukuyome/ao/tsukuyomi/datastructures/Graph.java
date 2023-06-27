@@ -1,5 +1,6 @@
 package ao.tsukuyomi.datastructures;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Graph<T> {
@@ -26,8 +27,14 @@ public class Graph<T> {
         vertex.link(this);
     }
 
-    public void unlink(int index) {
-        return;
+    public void unlink(Graph<T> e) {
+        Graph<T> tmp = this.edges.get(e);
+        if(Objects.isNull(tmp)){
+            System.out.println("Este player não se encontra na tua lista de amigos.");
+            return;
+        }
+        tmp.unlink(this);
+        this.edges.remove(tmp);
     }
 
     public Graph<T> getLink(int index) {
