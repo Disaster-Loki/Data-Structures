@@ -15,7 +15,6 @@ public class CircularList {
         this.players = new Player[queue.ListPlayer().size()];  // Inicializa o array de jogadores com o tamanho da fila 
         this.battles = new Battle[queue.ListPlayer().size()];  // Inicializa o array de batalhas com o tamanho da fila
         this.size = queue.ListPlayer().size();                 // Define o tamanho atual como o tamanho da fila
-
         for (Player player : queue.ListPlayer()) {
             addPlayer(player);
         }
