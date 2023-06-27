@@ -83,6 +83,9 @@ public class CircularList {
                 System.out.println(player2.getNick() + " wins!");
                 System.out.println(player1.getNick() + " loses.");
                 break;
+            }else{
+                System.out.println(player1.getNick() + " Tie");
+                System.out.println(player2.getNick() + " Tie");
             }
         }
 
@@ -111,7 +114,7 @@ public class CircularList {
             return;
         }
 
-        System.out.println("ao.tsukuyomi.game.objects.Player: " + player.getNick());
+        System.out.println("Player: " + player.getNick());
         System.out.println("Opponent: " + opponent.getNick());
         System.out.println("Date and Time: " + battle.getDateTime());
         System.out.println("Turns: " + battle.getSkill().getLevel());
