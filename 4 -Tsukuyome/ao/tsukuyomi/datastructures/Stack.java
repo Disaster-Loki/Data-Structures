@@ -19,8 +19,8 @@ public class Stack implements Serializable {
         this.queue = queue;                   // Associa a fila fornecida à pilha
         this.size = 0;
     }
-    public void isEmpty(){
-        this.size = 0;
+    public boolean isEmpty(){
+        return this.size == 0;
     }
 
     public void addFirst(Action action){
@@ -28,7 +28,7 @@ public class Stack implements Serializable {
         top = action;
     }
     public void addAction(Action action) {
-        actions.addFirst(action);             // Adiciona uma ação no início da lista encadeada (topo da pilha)
+        this.actions.addFirst(action);             // Adiciona uma ação no início da lista encadeada (topo da pilha)
         size++;
     }
 

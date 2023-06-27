@@ -18,7 +18,6 @@ public class Queue implements Serializable {
         this.scan = new Scanner(System.in);  // Inicializa o objeto Scanner para leitura de entrada do sistema
         this.size = 0;
     }
-
     public void isEmpty(){
         size =0;
     }
@@ -67,9 +66,9 @@ public class Queue implements Serializable {
     
     public void PrintAllPlayers() {
         if (players.isEmpty()) {
-            System.out.println("ao.tsukuyomi.datastructures.No players in the queue.");
+            System.out.println("No players in the queue.");
         } else {
-            System.out.println("ao.tsukuyomi.game.objects.Player List:");
+            System.out.println("Player List:");
             for (Player player : players) {
                 System.out.println(player.toString());   // Imprime a lista de todos os jogadores
             }
@@ -101,7 +100,7 @@ public class Queue implements Serializable {
 
     public void RemoverAllPlayer() {
         if (players.isEmpty()) {
-            System.out.println("ao.tsukuyomi.datastructures.No players in the queue.");
+            System.out.println("No players in the queue.");
         } else {
             players.clear();
             System.out.println("\nAll players removed successfully.");   // Remove todos os jogadores da lista
