@@ -5,34 +5,24 @@ import ao.tsukuyomi.game.objects.Player;
 import ao.tsukuyomi.game.objects.Skill;
 
 import java.util.Date;
-import java.util.Objects;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 public class CircularList {
-    private Player[] players;  // Array of ao.tsukuyomi.game.objects.Player
-    private Battle[] battles;  //Array of ao.tsukuyomi.game.mechanics.Battle
-    private int size;          // size atual da lista
+    private LinkedList<Player> players;  // LinkedList de Player
+    private LinkedList<Battle> battles;  // LinkedList de Battle
 
     public CircularList(Queue queue) {
-        this.players = new Player[queue.ListPlayer().size()];  // Inicializa o array de jogadores com o tamanho da fila 
-        this.battles = new Battle[queue.ListPlayer().size()];  // Inicializa o array de batalhas com o tamanho da fila
-        this.size = queue.ListPlayer().size();                 // Define o tamanho atual como o tamanho da fila
+        this.players = new LinkedList<>();
+        this.battles = new LinkedList<>();
+
         for (Player player : queue.ListPlayer()) {
             addPlayer(player);
         }
     }
 
     public void addPlayer(Player player) {
-        if (size == players.length) {
-            Player[] newArray = new Player[size * 2];                        // Se o tamanho atual for igual ao tamanho do array, duplica o tamanho
-            System.arraycopy(players, 0, newArray, 0, size);  // Copia os elementos do array antigo para o novo array
-            players = newArray;
-
-            Battle[] newBattles = new Battle[size * 2];                      // Faz o mesmo para o array de batalhas
-            System.arraycopy(battles, 0, newBattles, 0, size);
-            battles = newBattles;
-        }
-        players[size] = player;                                               // Adiciona o jogador na próxima posição disponível
-        size++;
+        players.add(player);
     }
 
     public void ConnectionPlayer(String nickname, String skillName) {
@@ -61,7 +51,7 @@ public class CircularList {
         }
 
         Battle battle = new Battle(new Date(), null);
-        battles[size - 1] = battle;
+        battles.add(battle);
 
         int turns = 0;
         int sum1 = 0;
@@ -83,7 +73,7 @@ public class CircularList {
                 System.out.println(player2.getNick() + " wins!");
                 System.out.println(player1.getNick() + " loses.");
                 break;
-            }else{
+            } else {
                 System.out.println(player1.getNick() + " Tie");
                 System.out.println(player2.getNick() + " Tie");
             }
@@ -139,6 +129,17 @@ public class CircularList {
     }
 
     public Player getPlayerByBattle(Battle battle) {
+        Iterator<Player> playerIterator = players.iterator();
+        Iterator<Battle> battleIterator = battles.iterator();
+
+        while (playerIterator.hasNext() && battleIterator.hasNext()) {
+            Player player = playerIterator.next();
+            Battle currentBattle = battleIterator.next();
+            if (currentBattle == battle) {
+                return player;
+            }
+        }
+
         return null;
     }
 
@@ -159,60 +160,62 @@ public class CircularList {
     }
 
     public void removeBattle(Battle battle) {
-        for (int i = 0; i < battles.length; i++) {
-            if (battles[i] == battle) {
-                battles[i] = null;
-                break;
-            }
-        }
+        battles.remove(battle);
     }
 
     public void RemoveHistory() {
-        for (int i = 0; i < battles.length; i++) {
-            battles[i] = null;
-        }
+        battles.clear();
     }
 
     public Player getOpponent(Player player, Battle battle) {
         int index = getIndex(player, battle);
-        int opponentIndex = (index + 1) % size;
+        int opponentIndex = (index + 1) % players.size();
 
-        while (opponentIndex != index && players[opponentIndex] == null) {
-            opponentIndex = (opponentIndex + 1) % size;
+        while (opponentIndex != index && players.get(opponentIndex) == null) {
+            opponentIndex = (opponentIndex + 1) % players.size();
         }
 
-        return players[opponentIndex];
+        return players.get(opponentIndex);
     }
 
     public Player getPlayerByNickname(String nickname) {
-    for (int i = 0; i < size; i++) {
-        Player player = players[i];
-        if (player != null && player.getNick().equalsIgnoreCase(nickname)) {
-            System.err.println("erro");
-            return players[i];
-        }
-        System.err.println("erro");
-    }
-    return null;
-}
-
-    public int getIndex(Player player, Battle battle) {
-        for (int i = 0; i < size; i++) {
-            if (players[i] == player && battles[i] == battle) {
-                return i;
+        for (Player player : players) {
+            if (player != null && player.getNick().equalsIgnoreCase(nickname)) {
+                return player;
             }
         }
+        return null;
+    }
+
+    public int getIndex(Player player, Battle battle) {
+        Iterator<Player> playerIterator = players.iterator();
+        Iterator<Battle> battleIterator = battles.iterator();
+        int index = 0;
+
+        while (playerIterator.hasNext() && battleIterator.hasNext()) {
+            Player currentPlayer = playerIterator.next();
+            Battle currentBattle = battleIterator.next();
+            if (currentPlayer == player && currentBattle == battle) {
+                return index;
+            }
+            index++;
+        }
+
         return -1;
     }
 
     private Battle getBattleByPlayer(Player player) {
-        for (int i = 0; i < size; i++) {
-            if (Objects.equals(players[i], player) && battles[i] != null) { //mudei aqui
-                System.err.println("erro");
-                return battles[i];
+        Iterator<Player> playerIterator = players.iterator();
+        Iterator<Battle> battleIterator = battles.iterator();
+
+        while (playerIterator.hasNext() && battleIterator.hasNext()) {
+            Player currentPlayer = playerIterator.next();
+            Battle currentBattle = battleIterator.next();
+            if (currentPlayer.equals(player) && currentBattle != null) {
+                return currentBattle;
             }
-            System.err.println("erro");
         }
+
         return null;
     }
 
