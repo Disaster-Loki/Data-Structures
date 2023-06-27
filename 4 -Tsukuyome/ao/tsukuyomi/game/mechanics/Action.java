@@ -9,6 +9,7 @@ import java.util.Map;
 
 public class Action{
     private Map<Player, String> actions;    // Mapa que associa cada jogador a uma ação
+    public Action next;
 
     public Action() {
         this.actions = new HashMap<>();    // Inicializa o mapa vazio
@@ -52,5 +53,13 @@ public class Action{
             return player;                  // Retorna o jogador associado à primeira ação no mapa
         }
         return null;                        // Retorna nulo se o mapa estiver vazio
+    }
+
+    public void setNext(Action actions){
+        this.next =actions;
+    }
+
+    public Action getNext() {
+        return next;
     }
 }

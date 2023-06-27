@@ -7,7 +7,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Menu menu = new Menu();
 
-        System.out.println("\t\t\t Welcome to Tsukuyomi Game!");
+        System.out.println("\t\t\t\t Welcome to Tsukuyomi Game!");
+        System.out.println("\t\t\t ======================================");
 
         while (true) {
             if (!menu.isLoggedIn()) {

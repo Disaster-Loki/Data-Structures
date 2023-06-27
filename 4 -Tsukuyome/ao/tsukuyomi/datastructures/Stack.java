@@ -10,6 +10,7 @@ import java.util.List;
 
 public class Stack implements Serializable {
     private LinkedList<Action> actions;   // Lista encadeada das ações
+    private Action top;
     private Queue queue;                   // Fila associada à pilha
     private int size;
 
@@ -22,6 +23,10 @@ public class Stack implements Serializable {
         this.size = 0;
     }
 
+    public void addFirst(Action action){
+        action.setNext(top);
+        top = action;
+    }
     public void addAction(Action action) {
         actions.addFirst(action);             // Adiciona uma ação no início da lista encadeada (topo da pilha)
         size++;

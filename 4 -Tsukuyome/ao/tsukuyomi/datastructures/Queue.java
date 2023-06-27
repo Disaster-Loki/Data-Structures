@@ -10,17 +10,24 @@ import java.util.Scanner;
 
 public class Queue implements Serializable {
     private List<Player> players;   // Lista de jogadores na fila
-    private Scanner scan;          
+    private Scanner scan;
+    private int size;
 
     public Queue() {
         this.players = new ArrayList<>();    // Inicializa a lista de jogadores vazia
         this.scan = new Scanner(System.in);  // Inicializa o objeto Scanner para leitura de entrada do sistema
+        this.size = 0;
+    }
+
+    public void isEmpty(){
+        size =0;
     }
 
     public void AddPlayer(Player player) {
         if (players.add(player)) {
             System.out.println("");    // Adiciona um jogador à lista de jogadores
         }
+        size++;
     }
 
     public void ConsultPlayer(String nick) {
@@ -84,11 +91,12 @@ public class Queue implements Serializable {
             Player player = iterator.next();
             if (player.getNick().equalsIgnoreCase(nick)) {
                 iterator.remove();
-                System.out.println("\nao.tsukuyomi.game.objects.Player removed successfully.");   // Remove um jogador da lista com base no apelido fornecido
+                System.out.println("\nPlayer removed successfully.");   // Remove um jogador da lista com base no apelido fornecido
+                size--;
                 return;
             }
         }
-        System.out.println("ao.tsukuyomi.game.objects.Player not found.");
+        System.out.println("Player not found.");
     }
 
     public void RemoverAllPlayer() {
@@ -97,6 +105,7 @@ public class Queue implements Serializable {
         } else {
             players.clear();
             System.out.println("\nAll players removed successfully.");   // Remove todos os jogadores da lista
+            size=0;
         }
     }
 }
