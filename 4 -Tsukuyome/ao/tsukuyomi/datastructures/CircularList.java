@@ -188,8 +188,10 @@ public class CircularList {
     for (int i = 0; i < size; i++) {
         Player player = players[i];
         if (player != null && player.getNick().equalsIgnoreCase(nickname)) {
+            System.err.println("erro");
             return players[i];
         }
+        System.err.println("erro");
     }
     return null;
 }
@@ -206,8 +208,10 @@ public class CircularList {
     private Battle getBattleByPlayer(Player player) {
         for (int i = 0; i < size; i++) {
             if (Objects.equals(players[i], player) && battles[i] != null) { //mudei aqui
+                System.err.println("erro");
                 return battles[i];
             }
+            System.err.println("erro");
         }
         return null;
     }
