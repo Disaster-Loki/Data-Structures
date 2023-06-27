@@ -7,7 +7,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Menu menu = new Menu();
 
-        System.out.println("\t\t\t Welcome to Tsukuyomi ao.tsukuyomi.Game!");
+        System.out.println("\t\t\t Welcome to Tsukuyomi Game!");
 
         while (true) {
             if (!menu.isLoggedIn()) {
