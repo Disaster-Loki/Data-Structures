@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80d6f35e-b0fc-44f1-a68c-1dd35d563df2" name="Changes" comment="show links method fix and a verification for the link() menthod">
-      <change beforePath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/Graph.java" afterDir="false" />
+    <list default="true" id="80d6f35e-b0fc-44f1-a68c-1dd35d563df2" name="Changes" comment="search and remove by object methods added">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/CircularList.java" beforeDir="false" afterPath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/CircularList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="vertex_unlink" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -78,6 +79,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
@@ -133,7 +135,23 @@
       <option name="project" value="LOCAL" />
       <updated>1687822343781</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="show links method fix and a verification for the link() menthod">
+      <option name="closed" value="true" />
+      <created>1687822368041</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1687822368041</updated>
+    </task>
+    <task id="LOCAL-00007" summary="search and remove by object methods added">
+      <option name="closed" value="true" />
+      <created>1687824209675</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1687824209675</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -141,6 +159,7 @@
     <MESSAGE value="Graph implementation" />
     <MESSAGE value="toString methods for ListNode and DoubleLinkedList overriden and a recursive method that lists the connections of a vertex in a graph created. None of those was tested." />
     <MESSAGE value="show links method fix and a verification for the link() menthod" />
-    <option name="LAST_COMMIT_MESSAGE" value="show links method fix and a verification for the link() menthod" />
+    <MESSAGE value="search and remove by object methods added" />
+    <option name="LAST_COMMIT_MESSAGE" value="search and remove by object methods added" />
   </component>
 </project>
