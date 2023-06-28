@@ -5,167 +5,119 @@ import ao.tsukuyomi.game.objects.Skill;
 import java.util.ArrayList;
 import java.util.List;
 
+import ao.tsukuyomi.game.objects.Skill;
+
 public class BinaryTree {
-    private No raiz;
-    private List<Skill> skills;
+    private No root;
 
-    public BinaryTree() {
-        this.raiz = null;
-        this.skills = new ArrayList<>();
-    }
+    public void addNode(Skill skill) {
+        No newNode = new No(skill);          // Create a new No with the Skill
 
-    public void createSkill(Skill skill) {
-        if (checkDuplicateSkill(skill)) {
-            System.out.println("A skill with the same name already exists.");
-            return;
-        }
-
-        skills.add(skill);
-
-        No novoNode = new No(skill.getLevel());
-        novoNode.setSkill(skill.getName());
-
-        if (raiz == null) {
-            raiz = novoNode;
+        if (root == null) {
+            root = newNode;  // If the tree is empty, set the new node as the root
         } else {
-            adicionarNoRecursivo(raiz, novoNode);
+            insertNode(root, newNode);  // Otherwise, insert the new node into the tree
         }
     }
 
-    private void adicionarNoRecursivo(No currentNode, No novoNode) {
-        if (novoNode.getValor() < currentNode.getValor()) {
-            if (currentNode.getEsquerda() == null) {
-                currentNode.setEsquerda(novoNode);
+    private void insertNode(No currentNode, No newNode) {
+        if (currentNode.getSkill().hashCode() > newNode.getSkill().hashCode()) {
+            // If the current node's skill is greater, move to the left child
+            if (currentNode.getLeft() == null) {
+                currentNode.setLeft(newNode);  // Insert the new node as the left child
             } else {
-                adicionarNoRecursivo(currentNode.getEsquerda(), novoNode);
+                insertNode(currentNode.getLeft(), newNode);  // Recursively insert into the left subtree
             }
-        } else if (novoNode.getValor() > currentNode.getValor()) {
-            if (currentNode.getDireita() == null) {
-                currentNode.setDireita(novoNode);
+        } else if (currentNode.getSkill().hashCode() < newNode.getSkill().hashCode()) {
+            // If the current node's skill is lesser, move to the right child
+            if (currentNode.getRight() == null) {
+                currentNode.setRight(newNode);  // Insert the new node as the right child
             } else {
-                adicionarNoRecursivo(currentNode.getDireita(), novoNode);
+                insertNode(currentNode.getRight(), newNode);  // Recursively insert into the right subtree
             }
-        } else {
-            currentNode.setSkill(novoNode.getSkill()); // Define a habilidade do nó
         }
+        // If the hashcodes are equal, do nothing (assuming duplicate skills are not allowed)
     }
 
-    public void removerNode(int valor) {
-        raiz = removerNodeRecursivo(raiz, valor);
+    public void removeNode(String skillName) {
+        root = removeNode(root, skillName);
     }
 
-    private No removerNodeRecursivo(No currentNode, int valor) {
+    //aiiases
+    public void removeAllSkills(){
+        root = null;
+    }
+
+    public void createSkill(Skill skill){
+        addNode(skill);
+    }
+
+    private No removeNode(No currentNode, String skillName) {
         if (currentNode == null) {
-            return null;
+            return null;  // Reached the end of a subtree, skill not found
         }
 
-        if (valor == currentNode.getValor()) {
-            if (currentNode.getEsquerda() == null && currentNode.getDireita() == null) {
+        if (currentNode.getSkill().getName().equalsIgnoreCase(skillName)) {
+            // Found the node to be removed
+            if (currentNode.getLeft() == null && currentNode.getRight() == null) {
+                // Case 1: Node is a leaf, simply remove it
                 return null;
-            } else if (currentNode.getEsquerda() == null) {
-                return currentNode.getDireita();
-            } else if (currentNode.getDireita() == null) {
-                return currentNode.getEsquerda();
+            } else if (currentNode.getLeft() == null) {
+                // Case 2: Node has only a right child, replace it with the right child
+                return currentNode.getRight();
+            } else if (currentNode.getRight() == null) {
+                // Case 3: Node has only a left child, replace it with the left child
+                return currentNode.getLeft();
             } else {
-                int menorValor = encontrarMenorValor(currentNode.getDireita());
-                currentNode.setValor(menorValor);
-                currentNode.setDireita(removerNodeRecursivo(currentNode.getDireita(), menorValor));
+                // Case 4: Node has both left and right children
+                No successor = getSuccessor(currentNode.getRight());
+                currentNode.setSkill(successor.getSkill());
+                currentNode.setRight(removeNode(currentNode.getRight(), successor.getSkill().getName()));
                 return currentNode;
             }
+        } else if (currentNode.getSkill().hashCode() > skillName.hashCode()) {
+            // Move to the left subtree
+            currentNode.setLeft(removeNode(currentNode.getLeft(), skillName));
+        } else {
+            // Move to the right subtree
+            currentNode.setRight(removeNode(currentNode.getRight(), skillName));
         }
-        if (valor < currentNode.getValor()) {
-            currentNode.setEsquerda(removerNodeRecursivo(currentNode.getEsquerda(), valor));
-            return currentNode;
-        }
-        currentNode.setDireita(removerNodeRecursivo(currentNode.getDireita(), valor));
         return currentNode;
     }
 
-    private int encontrarMenorValor(No currentNode) {
-        return currentNode.getEsquerda() == null ? currentNode.getValor() : encontrarMenorValor(currentNode.getEsquerda());
+    private No getSuccessor(No node) {
+        No current = node;
+        while (current.getLeft() != null) {
+            current = current.getLeft();
+        }
+        return current;
     }
 
-    public void listarNodes() {
-        listarNodesRecursivo(raiz);
+    public No searchSkill(String skillName) {
+        return searchSkill(root, skillName);
     }
 
-    private void listarNodesRecursivo(No currentNode) {
+    private No searchSkill(No currentNode, String skillName) {
+        if (currentNode == null || currentNode.getSkill().getName().equalsIgnoreCase(skillName)) {
+            return currentNode;  // Found the node or reached the end of a subtree
+        }
+
+        if (currentNode.getSkill().hashCode() > skillName.hashCode()) {
+            return searchSkill(currentNode.getLeft(), skillName);  // Move to the left subtree
+        } else {
+            return searchSkill(currentNode.getRight(), skillName);  // Move to the right subtree
+        }
+    }
+
+    public void listNodes() {
+        listNodes(root);
+    }
+
+    private void listNodes(No currentNode) {
         if (currentNode != null) {
-            listarNodesRecursivo(currentNode.getEsquerda());
-            System.out.println("Level: " + currentNode.getValor() + " - Skill: " + currentNode.getSkill());
-            listarNodesRecursivo(currentNode.getDireita());
+            listNodes(currentNode.getLeft());    // Visit left subtree
+            System.out.println(currentNode);     // Print the node
+            listNodes(currentNode.getRight());   // Visit right subtree
         }
-    }
-
-    public void showFullTree() {
-        System.out.println("Skill Tree:");
-        showFullTreeRecursivo(raiz, 0);
-    }
-
-    private void showFullTreeRecursivo(No currentNode, int nivel) {
-        if (currentNode != null) {
-            showFullTreeRecursivo(currentNode.getDireita(), nivel + 1);
-            for (int i = 0; i < nivel; i++) {
-                System.out.print("\t");
-            }
-            System.out.println("Level: " + currentNode.getValor() + "- Skill: " + currentNode.getSkill());
-            showFullTreeRecursivo(currentNode.getEsquerda(), nivel + 1);
-        }
-    }
-
-    public void showLevels() {
-        System.out.println("Skill Levels:");
-        showLevelsRecursivo(raiz, 0);
-    }
-
-    private void showLevelsRecursivo(No currentNode, int nivel) {
-        if (currentNode != null) {
-            showLevelsRecursivo(currentNode.getEsquerda(), nivel + 1);
-            for (int i = 0; i < nivel; i++) {
-                System.out.print("\t");
-            }
-            System.out.println("Level: " + currentNode.getValor());
-            showLevelsRecursivo(currentNode.getDireita(), nivel + 1);
-        }
-    }
-
-    public void showSkill() {
-        System.out.println("Skills:");
-        for (Skill skill : skills) {
-            System.out.println(skill.getName());
-        }
-    }
-
-    public void searchSkill(String nome) {
-        boolean encontrada = false;
-
-        for (Skill skill : skills) {
-            if (skill.getName().equalsIgnoreCase(nome)) {
-                encontrada = true;
-                System.out.println("\n================================");
-                System.out.println("Skill Name: " + skill.getName());
-                System.out.println("Description: " + skill.getDescription());
-                System.out.println("Level: " + skill.getLevel());
-                System.out.println("================================");
-                break;
-            }
-        }
-        if (!encontrada) {
-            System.out.println("Skill not found.");
-        }
-    }
-
-    public void removeAllSkill() {
-        raiz = null;
-        skills.clear();
-    }
-
-    private boolean checkDuplicateSkill(Skill newSkill) {
-        for (Skill skill : skills) {
-            if (skill.getName().equalsIgnoreCase(newSkill.getName())) {
-                return true;
-            }
-        }
-        return false;
     }
 }

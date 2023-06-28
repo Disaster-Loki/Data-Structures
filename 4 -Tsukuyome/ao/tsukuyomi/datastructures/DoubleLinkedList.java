@@ -1,9 +1,15 @@
 package ao.tsukuyomi.datastructures;
 
+import ao.tsukuyomi.game.objects.Player;
+
 public class DoubleLinkedList<T>{
-    ListNode<T> first;
-    ListNode<T> last;
-    int size;
+    private ListNode<T> first;
+    private ListNode<T> last;
+    private int size;
+
+    public int size(){
+        return this.size;
+    }
 
     public ListNode<T> get(int index){
         var tmp = first;
@@ -114,7 +120,7 @@ public class DoubleLinkedList<T>{
     public String toString(){
         var sb = new StringBuilder();
         for(int index = 0; index < size; index++)
-            sb.append("" + index + " - " + get(index) + "\n");
+            sb.append("\t" + index + " - " + get(index) + "\n");
 
         return sb.toString();
     }

@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80d6f35e-b0fc-44f1-a68c-1dd35d563df2" name="Changes" comment="search and remove by object methods added">
+    <list default="true" id="80d6f35e-b0fc-44f1-a68c-1dd35d563df2" name="Changes" comment="Fix an unknown bug without testing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/CircularList.java" beforeDir="false" afterPath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/CircularList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/DoubleLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/DoubleLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/No.java" beforeDir="false" afterPath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/datastructures/No.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/game/objects/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/4 -Tsukuyome/ao/tsukuyomi/game/objects/Skill.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,38 +46,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "/home/orccyberpunk/eclipse-workspace/Estrutura de Dados/4 -Tsukuyome",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/orccyberpunk/eclipse-workspace/Estrutura de Dados/4 -Tsukuyome&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="20" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="ao.tsukuyomi.Main" />
       <module name="4 -Tsukuyome" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="4 -Tsukuyome" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="4 -Tsukuyome" />
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -151,8 +143,27 @@
       <option name="project" value="LOCAL" />
       <updated>1687824209675</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fix an unknown bug without testing">
+      <option name="closed" value="true" />
+      <created>1687826369755</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1687826369755</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project organization according to classes roles." />
@@ -160,6 +171,7 @@
     <MESSAGE value="toString methods for ListNode and DoubleLinkedList overriden and a recursive method that lists the connections of a vertex in a graph created. None of those was tested." />
     <MESSAGE value="show links method fix and a verification for the link() menthod" />
     <MESSAGE value="search and remove by object methods added" />
-    <option name="LAST_COMMIT_MESSAGE" value="search and remove by object methods added" />
+    <MESSAGE value="Fix an unknown bug without testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix an unknown bug without testing" />
   </component>
 </project>

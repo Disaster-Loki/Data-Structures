@@ -39,4 +39,13 @@ public class Skill implements Serializable {
         this.level = level;
     }
 
+    @Override
+    public String toString(){
+        var sb = new StringBuilder();
+        sb.append("Name: " + this.name + "\n");
+        sb.append("Description: " + this.description + "\n");
+        sb.append("Level: " + this.level + "\n");
+        return sb.toString();
+    }
+
 }

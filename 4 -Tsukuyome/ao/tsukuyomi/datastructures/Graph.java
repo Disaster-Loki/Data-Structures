@@ -1,9 +1,11 @@
 package ao.tsukuyomi.datastructures;
 
+import ao.tsukuyomi.game.objects.Player;
+
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Graph<T> {
+public class Graph<T extends Player> {
     T vertex;
     DoubleLinkedList<Graph<T>> edges;
 
@@ -24,7 +26,7 @@ public class Graph<T> {
         if(this.equals(vertex))
             return;
         edges.add(vertex);
-        vertex.link(this);
+        //vertex.link(this);
     }
 
     public void unlink(Graph<T> e) {
@@ -33,7 +35,7 @@ public class Graph<T> {
             System.out.println("Este player não se encontra na tua lista de amigos.");
             return;
         }
-        tmp.unlink(this);
+        //tmp.unlink(this);
         this.edges.remove(tmp);
     }
 
@@ -42,6 +44,11 @@ public class Graph<T> {
     }
 
     public void seeLinks(Graph<T> g){
+        if(getConnectionsCount() < 1){
+            System.out.println("So sad, the player has no friend :( ... Anyway");
+            return;
+        }
+
         Scanner s = new Scanner(System.in);
         System.out.println(this.edges);
         System.out.print("Selecione amigo (-1 para voltar): ");
@@ -52,5 +59,18 @@ public class Graph<T> {
         seeLinks(g.getLink(index));
 
         s.close();
+    }
+
+    public int getConnectionsCount(){
+        return edges.size();
+    }
+
+    @Override
+    public String toString(){
+        var sb = new StringBuilder();
+        sb.append("Vertex: " + vertex.getNick() + "\n");
+        sb.append("Edges: \n" + edges.toString());
+
+        return sb.toString();
     }
 }

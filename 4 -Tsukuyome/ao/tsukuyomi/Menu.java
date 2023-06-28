@@ -6,6 +6,8 @@ import ao.tsukuyomi.game.objects.Player;
 import ao.tsukuyomi.game.objects.Skill;
 import ao.tsukuyomi.game.objects.Event;
 
+import java.util.HashSet;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Menu {
@@ -17,6 +19,7 @@ public class Menu {
     private CircularList circularList;
     private BinaryTree binaryTree;
     private Graph<Player> graph;
+    private HashSet<Graph<Player>> friendship;
 
     public Menu() {
         this.admin = new Admin("admin", "admin123");
@@ -27,6 +30,7 @@ public class Menu {
         this.circularList = new CircularList();
         this.binaryTree = new BinaryTree();
         this.graph = new Graph<>(new Player());
+        this.friendship = new HashSet<>();
         testPlayer();
         testSkills();
         testEvent();
@@ -112,6 +116,33 @@ public class Menu {
         player2.setNick("sasuke");
         player2.setSenha("sasuke");
         queue.AddPlayer(player2);
+
+    Player test1 = new Player();
+        test1.setNome("A");
+        test1.setIdade(19);
+        test1.setGenero("Masculino");
+        test1.setEmail("forcehate@fohmail.com");
+        test1.setNick("a");
+        test1.setSenha("sasuke");
+    queue.AddPlayer(test1);
+
+    Player test2 = new Player();
+        test2.setNome("B");
+        test2.setIdade(19);
+        test2.setGenero("Masculino");
+        test2.setEmail("forcehate@fohmail.com");
+        test2.setNick("b");
+        test2.setSenha("sasuke");
+    queue.AddPlayer(test2);
+
+    Player test3 = new Player();
+        test3.setNome("C");
+        test3.setIdade(19);
+        test3.setGenero("Masculino");
+        test3.setEmail("forcehate@fohmail.com");
+        test3.setNick("c");
+        test3.setSenha("sasuke");
+    queue.AddPlayer(test3);
     }
 
     public void showQueueMenu(Scanner scanner) {
@@ -360,12 +391,10 @@ public class Menu {
             System.out.println("\n\t\t\t=========== BinaryTree Menu ============");
             System.out.println("\t\t\t|       1 - Create Skill                |");
             System.out.println("\t\t\t|       2 - Search Skill                |");
-            System.out.println("\t\t\t|       3 - Show Full Tree              |");
-            System.out.println("\t\t\t|       4 - List Skills                 |");
-            System.out.println("\t\t\t|       5 - Show Levels                 |");
-            System.out.println("\t\t\t|       6 - Remove Skill                |");
-            System.out.println("\t\t\t|       7 - Remove All Skills           |");
-            System.out.println("\t\t\t|       8 - Go Back                     |");
+            System.out.println("\t\t\t|       3 - List Skills                 |");
+            System.out.println("\t\t\t|       4 - Remove Skill                |");
+            System.out.println("\t\t\t|       5 - Remove All Skills           |");
+            System.out.println("\t\t\t|       0 - Go Back                     |");
             System.out.println("\t\t\t=========================================\n\n");
             System.out.print("Choose Option: ");
             option = Integer.parseInt(scan.nextLine());
@@ -383,32 +412,25 @@ public class Menu {
                     binaryTree.createSkill(skill);
                     System.out.println("\nSkill created successfully.");
                     break;
-                case 2:
-                    System.out.print("Enter the skill level to remove: ");
-                    int skillLevel = scan.nextInt();
-                    scan.nextLine();
-                    binaryTree.removerNode(skillLevel);
+                case 4:
+                    System.out.print("Enter the skill name to remove: ");
+                    var skillName = scan.nextLine();
+                    binaryTree.removeNode(skillName);
                     System.out.println("\nSkill removed successfully.");
                     break;
                 case 3:
-                    binaryTree.showSkill();
+                    binaryTree.listNodes();
                     break;
-                case 4:
-                    binaryTree.showFullTree();
+                case 2:
+                    System.out.print("Enter the skill name to search: ");
+                    String skillname = scan.nextLine();
+                    System.out.println(binaryTree.searchSkill(skillname));
                     break;
                 case 5:
-                    binaryTree.showLevels();
-                    break;
-                case 6:
-                    System.out.print("Enter the skill name to search: ");
-                    String skillName = scan.nextLine();
-                    binaryTree.searchSkill(skillName);
-                    break;
-                case 7:
-                    binaryTree.removeAllSkill();
+                    binaryTree.removeAllSkills();
                     System.out.println("\nAll skills removed.");
                     break;
-                case 8:
+                case 0:
                     return;
                 default:
                     System.out.print("Invalid option\n");
@@ -422,7 +444,7 @@ public class Menu {
         do {
             System.out.println("\t\t\t=========== Graphs Menu ===========");
             System.out.println("\t\t\t|        1 - Add Friends        |");
-            System.out.println("\t\t\t|        2 - See Friends Of     |");
+            System.out.println("\t\t\t|        2 - See Links          |");
             System.out.println("\t\t\t|        3 - Remove Friend      |");
             System.out.println("\t\t\t|        4 - Go Back            |");
             System.out.println("\t\t\t================================\n");
@@ -430,11 +452,77 @@ public class Menu {
             option = Integer.parseInt(scan.nextLine());
 
             switch (option){
-                case 1:
+                case 1: {
+                        System.out.print("Introduce the nick name of the first player: ");
+                        var newP1 = queue.FindPlayer(scanner.nextLine());
+                        System.out.print("Introduce the nick name of the second player: ");
+                        var newP2 = queue.FindPlayer(scanner.nextLine());
+
+                        if (newP1 == null || newP2 == null) {
+                            System.err.println("Could not conclude operation, at least one of the players do no exist");
+                            break;
+                        } else if (Objects.equals(newP1, newP2)) {
+                            System.err.println("You can't be friend of yourself");
+                            break;
+                        }
+
+                        var g1 = new Graph<Player>(newP1);
+                        var g2 = new Graph<Player>(newP2);
+
+                        g1.link(g2);
+                        g2.link(g1);
+
+                        friendship.add(g1);
+                        friendship.add(g2);
+                }
+
                        break;
-                case 2:
+                case 2:{
+                        var i = friendship.iterator();
+                        Graph<Player> tmp = null;
+
+                        while(i.hasNext())
+                            System.out.println(i.next().toString());
+                }
                        break;
-                case 3:
+                case 3:{
+                    System.out.print("Introduce the nick name of the one Who wants to unfriend someone: ");
+                    var p1 = queue.FindPlayer(scanner.nextLine());
+                    System.out.print("wants to unfriend who?: ");
+                    var p2 = queue.FindPlayer(scanner.nextLine());
+
+                    if (p1 == null || p2 == null) {
+                        System.err.println("Could not conclude operation, ate least one of the players do no exist");
+                        break;
+                    } else if (Objects.equals(p1, p2)) {
+                        System.err.println("You can't unfriend yourself");
+                        break;
+                    }
+
+                    // get ...
+                    Graph<Player> g1 = null;
+                    Graph<Player> g2 = null;
+
+                    var i = friendship.iterator();
+                    Graph<Player> tmp;
+                    while(i.hasNext()){
+                        tmp = i.next();
+                        if(tmp.getVertex().equals(p1))
+                            g1 = tmp;
+                        if(tmp.getVertex().equals(p2))
+                            g2 = tmp;
+                    }
+
+                    if(g1 == null || g2 == null){
+                        System.err.println("Cannot unfriend someone who's not your friend. Duh!");
+                        break;
+                    }
+
+                    g1.unlink(g2);
+                    g2.unlink(g1);
+
+                    System.out.println("Skimini was successful");
+                }
                        break;
                 case 4:
                        return;
