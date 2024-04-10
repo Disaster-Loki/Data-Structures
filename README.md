@@ -1,6 +1,6 @@
 # Estrutura-de-Dados
 
-*Prof Vatuva Eduardo*
+*Prof Eduardo Vatuva*
 
 1 Projeto Contentor (Pilha)
 
