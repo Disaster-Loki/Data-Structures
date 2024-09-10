@@ -25,7 +25,7 @@ Welcome to the **Data Structures Projects** repository! This collection of proje
   - Efficient list cycling
   - Endless loops: round-robin task management, media playlists
 
-### 🌀 **Project Tsukugome ao.tsukuyomi.Game (Queue, Stack, Circular List, Binary Tree, Graphs)**
+### 🌀 **Project Tsukugome (Queue, Stack, Circular List, Binary Tree, Graphs)**
 - **Description**: The most ambitious project in the collection! 🎮 **Tsukugome** combines multiple data structures to manage complex game mechanics, including **Queues** for managing tasks in order, **Stacks** for action history, **Circular Lists** for continuous game loops, **Binary Trees** for hierarchical decision making, and **Graphs** for representing game maps and networks.
 - **Key Concepts**:
   - Queues for turn-based actions
