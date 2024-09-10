@@ -47,7 +47,7 @@ We hope this collection of data structure projects provides valuable insight and
 To get started with any of the projects, clone the repository:
 
 ```bash
-git clone https://github.com/Disaster-Loki/Estrutura-de-Dados
+git clone https://github.com/Disaster-Loki/Data-Structures
 cd your-repo-name
 ```
 Each project has its own directory with detailed instructions for running the project.
