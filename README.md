@@ -37,7 +37,7 @@ Welcome to the **Data Structures Projects** repository! This collection of proje
 
 This project was developed by an amazing team:
 
-- [Sebastião De Carvalho](https://github.com/Disater-Loki)
+- [Sebastião De Carvalho](https://github.com/Disaster-Loki)
 - [Rafael Marcos](https://github.com/Tesla-J)
 
 We hope this collection of data structure projects provides valuable insight and a practical approach to learning these important concepts! 🎉
